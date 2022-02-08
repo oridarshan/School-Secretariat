@@ -1,5 +1,6 @@
 import unittest
 import Personnel
+from Classroom import Classroom
 
 
 class PersonnelTestCase(unittest.TestCase):
@@ -33,6 +34,20 @@ class PersonnelTestCase(unittest.TestCase):
         # p.print_teachers()
         self.assertEqual(2, len(p.teachers))
 
+
+class SchoolTestCase(unittest.TestCase):  # includes short test for classroom
+    def test_classroom(self):
+        a = Personnel.Teacher(1234, "Shai Aharon", ['OOP'], 10000)
+        b = Personnel.Teacher(2345, "Gabriel Nivash", ["Algo 1", 'OOP'], 15000)
+        s1 = Personnel.Student(1, 'Ori D', ['OOP', 'Algo 1'])
+        s2 = Personnel.Student(2, 'Amir S', ['OOP', 'Algo 1'])
+        s3 = Personnel.Student(3, 'Daniel R', ['OOP', 'Algo 1'])
+        st = [s1, s2]
+        c = Classroom('OOP', a, st)
+        c.add_student(s3)
+        self.assertEqual(3, len(c.students))
+        c.sub_teacher(b)
+        self.assertEqual('Gabriel Nivash', c.teacher.name)
 
 
 if __name__ == '__main__':
