@@ -10,6 +10,7 @@ class Person:
     def __eq__(self, other):
         return self.id == other.id
 
+
 class Student(Person):
     def __init__(self, p_id: int, name: str, subjects: list):
         super().__init__(p_id, name)
@@ -35,7 +36,7 @@ class Teacher(Person):
         return super().__str__() + ' subjects: ' + str(self.subjects)
 
 
-class Manager(Person):
+class Principle(Person):
     def __init__(self, p_id: int, name: str, teachers: list[Teacher], salary: int = 0):
         super().__init__(p_id, name)
         self.salary = salary
