@@ -22,4 +22,3 @@ class School:
             bdg -= teacher.salary
         bdg -= self.principle.salary
         return bdg
-    
