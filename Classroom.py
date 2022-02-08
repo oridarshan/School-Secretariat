@@ -12,3 +12,6 @@ class Classroom:
             self.students.append(student)
         else:
             self.students = [student]
+
+    def sub_teacher(self, sub_teacher: Personnel.Teacher):
+        self.teacher = sub_teacher
